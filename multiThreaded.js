@@ -18,7 +18,7 @@ app.get("/non-block", (req, res) => {
 //FUNCTION FOR CREATING WORKERS
 function createWorkers() {
   return new Promise((resolve, reject) => {
-    const worker = new Worker("./MultiThereading/divededWorkers.js", {
+    const worker = new Worker("./WorkersTypes/divededWorkers.js", {
       workerData: { threadCount: THERAD_COUNT },
     });
 
@@ -54,4 +54,4 @@ app.listen(PORT, () => {
 //THERE ARE 7 THREADS IN NODEJS INCULDING MAIN THREAD
 //2 THREADS FOR TRASH AND REMANING FOUR IS OTHER PURPOSES
 //TO CHECK HOW MANY CORE WE HAVE ** MAC=> sysctl -n hw.ncpu ** LINUX=> nproc ** WINDOWS=> echo %NUMBER_OF_PROCESSORS% (NO. => THIS IS MAX NO. YOU CAN UTILSE TO RUN YOUR THREADS PARALLEL)
-//THREADS DIVIDE CPU TASKS
+//THREADS DIVIDES CPU TASKS

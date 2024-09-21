@@ -18,7 +18,7 @@ app.get("/non-block", (req, res) => {
 
 app.get("/blocking", async(req, res) => {
 
-  const worker = new Worker("./MultiThereading/worker.js");
+  const worker = new Worker("./WorkersTypes/worker.js");
   worker.on('message', (data=>{
     res.status(200).send(
         `Blocking server is running And Count is : ${data}`
